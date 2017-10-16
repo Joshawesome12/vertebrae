@@ -101,7 +101,8 @@ var Message = Backbone.Model.extend({
      * Putting it into the initialize function let's us be sure that
      * all models that are created will have event listeners on them.
      */
-    this.on(YOUR CODE HERE);
+    this.on('change', renderSomethingOnThePage(model));
+    // console.log(model);
     /* It is your turn to write the event handler.
      *
      * Make an event listener that will listen for a `change` in this model's
@@ -160,6 +161,7 @@ myNewMessage.set({message: 'someMessage'});
  * useful methods, are wrapped up into Backbone.View.
  */
 
+myNewMessage.alertThisMessage()
 /* - ANSWERS ------------------------------------------------------------------
  * To style your template, you could
  * - Add classes to the div, and a CSS (stylesheet) file
